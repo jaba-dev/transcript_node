@@ -59,7 +59,7 @@ app.post(
       console.log("body", req.body);
       const FILE_URL =
         "https://storage.googleapis.com/aai-web-samples/5_common_sports_injuries.mp3";
-https://speech-to-text-s0um.onrender.com/api/convert
+
       const config = {
         audio_url: "https://speech-to-text-s0um.onrender.com/uploads/audio.wav",
         speaker_labels: true,
