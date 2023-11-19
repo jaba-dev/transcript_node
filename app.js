@@ -15,6 +15,7 @@ const client = new AssemblyAI({
 
 const fs = require("fs");
 const path = require("path");
+const { log } = require("console");
 
 // Save the base64 audio data to a file
 
@@ -46,7 +47,7 @@ app.post(
       const base64AudioData = req.body.toString("base64");
       // console.log("base64: ", base64AudioData);
       const audioFilePath = path.join(__dirname, "uploads", "audio.wav");
-
+      console.log("path: ", audioFilePath);
       // Check if the file exists
       if (fs.existsSync(audioFilePath)) {
         // If it exists, remove the file
@@ -63,13 +64,13 @@ app.post(
         audio_url: "http://localhost:8080/uploads/audio.wav",
         speaker_labels: true,
       };
-      console.log("config: ", config);
+      // console.log("config: ", config);
       const transcript = await client.transcripts.create(config);
 
-      console.log("text:", transcript);
+      // console.log("text:", transcript);
       //  for (let utterance of transcript.utterances) {
       //     console.log(`Speaker ${utterance.speaker}: ${utterance.text}`)
-      res.json({ message: "success", transcript: transcript.text });
+      res.json({ message: "success", transcript: transcript });
     } catch (error) {
       console.log("error: ", error);
       res.json({ message: "something went wrong:", error: error });

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "start-ngrok": "ngrok http 8080",
     "start-server": "node your-server-file.js",
     "test": "echo \"Error: no test specified\" && exit 1"
