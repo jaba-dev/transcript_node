@@ -1,0 +1,5 @@
+# render.yaml
+- name: Node.js
+  env: node
+  buildCommand: echo "No build step required"
+  startCommand: node app.js
